@@ -231,17 +231,17 @@
                   <ul class="space-y-4">
                     <li class="flex gap-x-2">
                       <div class="min-w-fit text-text/60">جنس :</div>
-                      <div class="text-text/90">پارچه</div>
+                      <div class="text-text/90">{% if product.material %} {{ product.material }} {% else %} {% endif %}</div>
                     </li>
                     <li class="flex gap-x-2">
-                      <div class="min-w-fit text-text/60">جنس زیره :</div>
-                      <div class="text-text/90">لاستیک</div>
+                      <div class="min-w-fit text-text/60">اندازه :</div>
+                      <div class="text-text/90">{% if product.size %} {{ product.size }} {% else %} {% endif %}</div>
                     </li>
                     <li class="flex gap-x-2">
                       <div class="min-w-fit text-text/60">
-                        نحوه بسته شدن کفش :
+                        رنگ :
                       </div>
-                      <div class="text-text/90">بندی</div>
+                      <div class="text-text/90">{% if product.color %} {{ product.color }} {% else %} {% endif %}</div>
                     </li>
                   </ul>
                 </div>
@@ -858,46 +858,42 @@
           >
             <ul class="space-y-6 text-sm">
               <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-                <div class="col-span-1 text-text/60">جنس</div>
+                <div class="col-span-1 text-text/60">رنگ</div>
                 <div
                   class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4"
                 >
                   <ul class="space-y-4">
-                    <li>پارچه</li>
+                    <li>{% if product.color %} {{ product.color }} {% else %} {% endif %}</li>
                   </ul>
                 </div>
               </li>
               <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-                <div class="col-span-1 text-text/60">جنس زیره</div>
+                <div class="col-span-1 text-text/60">اندازه</div>
                 <div
                   class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4"
                 >
                   <ul class="space-y-4">
-                    <li>لاستیک</li>
+                    <li>{% if product.size %} {{ product.size }} {% else %} {% endif %}</li>
                   </ul>
                 </div>
               </li>
               <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-                <div class="col-span-1 text-text/60">نحوه بسته شدن کفش</div>
+                <div class="col-span-1 text-text/60"></div>
                 <div
                   class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4"
                 >
                   <ul class="space-y-4">
-                    <li>بندی</li>
+                    <li>{% if product.material %} {{ product.material }} {% else %} {% endif %}</li>
                   </ul>
                 </div>
               </li>
               <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-                <div class="col-span-1 text-text/60">ویژگی‌های زیره</div>
+                <div class="col-span-1 text-text/60">ویژگی های بیشتر</div>
                 <div class="col-span-2 pb-4 text-text/90 lg:col-span-4">
-                  <ul class="space-y-4">
-                    <li>انعطاف پذیر</li>
-                    <li>دارای بالشتک هوا</li>
-                    <li>قابلیت ارتجاعی</li>
-                    <li>قابلیت گردش هوا</li>
-                    <li>کاهش فشار وارده</li>
-                    <li>مقاوم در برابر سایش</li>
-                  </ul>
+                    <p
+                      class="line-clamp-4 text-sm leading-relaxed text-text/90"
+                    > {% if product.extra_features %} {{ product.extra_features }} {% else %} {% endif %}
+                    </p>
                 </div>
               </li>
             </ul>
@@ -1571,40 +1567,36 @@
   <div class="h-full overflow-y-auto p-4 pb-32">
     <ul class="space-y-6 text-sm">
       <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
+        <div class="col-span-1 text-text/60">رنگ</div>
+        <div class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4">
+          <ul class="space-y-4">
+            <li>{% if product.color %} {{ product.color }} {% else %} {% endif %}</li>
+          </ul>
+        </div>
+      </li>
+      <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
+        <div class="col-span-1 text-text/60">اندازه</div>
+        <div class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4">
+          <ul class="space-y-4">
+            <li>{% if product.size %} {{ product.size }} {% else %} {% endif %}</li>
+          </ul>
+        </div>
+      </li>
+      <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
         <div class="col-span-1 text-text/60">جنس</div>
         <div class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4">
           <ul class="space-y-4">
-            <li>پارچه</li>
+            <li>{% if product.material %} {{ product.material }} {% else %} {% endif %}</li>
           </ul>
         </div>
       </li>
       <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-        <div class="col-span-1 text-text/60">جنس زیره</div>
-        <div class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4">
-          <ul class="space-y-4">
-            <li>لاستیک</li>
-          </ul>
-        </div>
-      </li>
-      <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-        <div class="col-span-1 text-text/60">نحوه بسته شدن کفش</div>
-        <div class="col-span-2 border-b pb-4 text-text/90 lg:col-span-4">
-          <ul class="space-y-4">
-            <li>بندی</li>
-          </ul>
-        </div>
-      </li>
-      <li class="grid grid-cols-3 gap-x-2 lg:grid-cols-5">
-        <div class="col-span-1 text-text/60">ویژگی‌های زیره</div>
+        <div class="col-span-1 text-text/60">ویژگی های بیشتر</div>
         <div class="col-span-2 pb-4 text-text/90 lg:col-span-4">
-          <ul class="space-y-4">
-            <li>انعطاف پذیر</li>
-            <li>دارای بالشتک هوا</li>
-            <li>قابلیت ارتجاعی</li>
-            <li>قابلیت گردش هوا</li>
-            <li>کاهش فشار وارده</li>
-            <li>مقاوم در برابر سایش</li>
-          </ul>
+            <p
+              class="line-clamp-4 text-sm leading-relaxed text-text/90"
+            > {% if product.extra_features %} {{ product.extra_features }} {% else %} {% endif %}
+            </p>
         </div>
       </li>
     </ul>
