@@ -1,5 +1,5 @@
 from django import forms
-from .models import CustomUser
+from .models import CustomUser, Address
 
 
 class ProfileEditForm(forms.ModelForm):
@@ -34,5 +34,23 @@ class ProfileEditForm(forms.ModelForm):
             "email",
             "mobile",
             "birth_date",
+            "national_code",
+        ]
+
+
+class AddressForm(forms.ModelForm):
+
+    class Meta:
+        model = Address
+        fields = [
+            "first_name",
+            "last_name",
+            "mobile",
+            "address",
+            "city",
+            "province",
+            "postal_code",
+            "number",
+            "unit",
             "national_code",
         ]
