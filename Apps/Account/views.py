@@ -2,7 +2,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from Apps.Settings.models import GeneralSettings
-from .models import CustomUser
+from .models import CustomUser, Address
 from .utils import generate_otp, verify_otp
 from django.core.mail import send_mail
 from django.conf import settings
@@ -261,6 +261,41 @@ def profile_address(request):
     context = {}
     return render(request, "Profile/_address.html", context)
 
+
+def profile_address_create(request):
+    context = {}
+    username = request.user.username
+    user = CustomUser.objects.filter(username=username)
+    if not user.exists():
+        raise Http404("کاربر مورد نظر یافت نشد")
+    user = user.first()
+
+    if request.method == "POST":
+        edit_form = ProfileEditForm(
+            request.POST or None,
+        )
+        if edit_form.is_valid():
+            first_name = edit_form.cleaned_data.get("first_name")
+            last_name = edit_form.cleaned_data.get("last_name")
+            mobile = edit_form.cleaned_data.get("mobile")
+            national_code = edit_form.cleaned_data.get("national_code")
+            address = edit_form.cleaned_data.get("address")
+            city = edit_form.cleaned_data.get("city")
+            province = edit_form.cleaned_data.get("province")
+            postal_code = edit_form.cleaned_data.get("postal_code")
+            number = edit_form.cleaned_data.get("number")
+            unit = edit_form.cleaned_data.get("unit")
+
+            Address.objects.create(user=user, first_name=first_name, last_name=last_name, mobile=mobile, national_code=national_code,
+                                   address=address, city=city, province=province, postal_code=postal_code,
+                                   number=number, unit=unit)
+
+            context["status"] = "success"
+            messages.success(request, "آدرس با موفقیت ایجاد شد")
+            return redirect("HTTP_REFERER")
+
+        messages.error(request, edit_form.errors.as_text())
+        return redirect(request.META["HTTP_REFERER"])
 
 @login_required(login_url='/login', )
 def profile_edit(request):

@@ -38,16 +38,7 @@
           </p>
 
           <div class="hidden md:block">
-            <button
-              id="dropdownMenuIconButton"
-              data-dropdown-toggle="address-option-1"
-              type="button"
-              class="rounded-full p-1 text-text/90 hover:bg-background hover:"
-            >
-              <svg class="h-6 w-6">
-                <use xlink:href="#vertical-dot" />
-              </svg>
-            </button>
+
             <!-- Dropdown menu -->
             <div
               class="z-10 !ml-5 hidden w-50 overflow-hidden rounded-lg border bg-muted"
@@ -236,6 +227,7 @@
               <input
                 type="text"
                 id="name"
+                name="first_name"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="نام گیرنده"
               />
@@ -256,6 +248,7 @@
               <input
                 type="text"
                 id="family"
+                name="last_name"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="نام خانوادگی گیرنده"
               />
@@ -276,6 +269,7 @@
               <input
                 type="text"
                 id="phoneNumber"
+                name="mobile"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="شماره تماس گیرنده"
               />
@@ -296,6 +290,7 @@
               <input
                 type="text"
                 id="nationalCode"
+                name="national_code"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="کد ملی گیرنده"
               />
@@ -317,6 +312,7 @@
               <textarea
                 type="text"
                 id="address"
+                name="address"
                 rows="3"
                 class="main-scroll peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="نشانی گیرنده"
@@ -338,6 +334,7 @@
               <input
                 type="text"
                 id="city"
+                name="city"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="شهر"
               />
@@ -358,6 +355,7 @@
               <input
                 type="text"
                 id="province"
+                name="province"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="استان"
               />
@@ -380,6 +378,7 @@
               <input
                 type="text"
                 id="buildingNumber"
+                name="number"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="پلاک"
               />
@@ -397,6 +396,7 @@
               <input
                 type="text"
                 id="buildingUnit"
+                name="unit"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="واحد"
               />
@@ -417,6 +417,7 @@
               <input
                 type="text"
                 id="postalCode"
+                name="postal_code"
                 class="peer w-full rounded-lg border-none bg-transparent px-4 py-3 placeholder-transparent focus:outline-none focus:ring-0"
                 placeholder="کد پستی"
               />
