@@ -54,3 +54,13 @@ class Address(models.Model):
     postal_code = models.CharField(max_length=10, verbose_name="کد پستی")
     number = models.CharField(max_length=10, verbose_name="شماره پلاک")
     unit = models.CharField(max_length=10, verbose_name="واحد")
+
+    class Meta:
+        verbose_name = "آدرس"
+        verbose_name_plural = "آدرس ها"
+
+    def __str__(self):
+        return self.user.username
+
+    def get_full_address(self):
+        return f"{self.address} - {self.city} - {self.province} - {self.postal_code}"

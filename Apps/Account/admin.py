@@ -5,3 +5,5 @@ from .models import *
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
     model = CustomUser
+
+admin.site.register(Address)

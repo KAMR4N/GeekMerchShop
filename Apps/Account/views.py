@@ -9,7 +9,7 @@ from django.conf import settings
 from django.db.models import Q
 import re
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileEditForm
+from .forms import AddressForm, ProfileEditForm
 from django.contrib import messages
 from Apps.Shop.models import Order
 
@@ -258,7 +258,8 @@ def profile_orders(request):
 
 @login_required(login_url='/login', )
 def profile_address(request):
-    context = {}
+    all_address = Address.objects.filter(user=request.user).all()
+    context = {"all_address" : all_address}
     return render(request, "Profile/_address.html", context)
 
 
@@ -271,7 +272,7 @@ def profile_address_create(request):
     user = user.first()
 
     if request.method == "POST":
-        edit_form = ProfileEditForm(
+        edit_form = AddressForm(
             request.POST or None,
         )
         if edit_form.is_valid():
