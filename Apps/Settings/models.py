@@ -51,6 +51,11 @@ class GeneralSettings(models.Model):
         blank=True,
         verbose_name="درباره ما",
     )
+    how_to_buy = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="راهنمای خرید",
+    )
     class Meta:
         verbose_name = "تنظیمات عمومی"
         verbose_name_plural = "تنظیمات عمومی"

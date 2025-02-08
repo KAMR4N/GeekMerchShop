@@ -1,3 +1,4 @@
+import datetime
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
@@ -12,7 +13,7 @@ from django.contrib import messages
 
 def products_archive(request):
     products_list = Product.objects.order_by("-created_at").all()
-    paginator = Paginator(products_list, 1)
+    paginator = Paginator(products_list, 9)
 
     page_number = request.GET.get("page")
     if page_number is None:
@@ -96,11 +97,32 @@ def remove_item_order(request, *args, **kwargs):
 
 @login_required(login_url='/login', )
 def remove_all_order(request, *args, **kwargs):
-    detail_id = kwargs.get('detail_id')
-    if detail_id is not None:
-        order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order__owner=request.user.id)
-        if order_detail is not None:
-            order_detail.delete()
-        messages.success(request, "محصول از سبد خرید حذف شد")
+    open_order: Order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
+    if open_order is not None:
+        OrderDetail.objects.filter(order=open_order).delete()
+        messages.success(request, "سبد خرید خالی شد")
         return redirect('/cart')
     raise Http404()
+
+@login_required(login_url='/login', )
+def payment(request):
+    open_order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
+    open_order.is_paid = True
+    open_order.payment_date = datetime.datetime.now()
+    open_order.save()
+    context = {}
+    return render(request, "Shop/payment.html", context)
+
+def search_products(request):
+    query = request.GET.get('q', '')
+    products = Product.objects.filter(Q(name__icontains=query)) if query else Product.objects.all()
+    paginator = Paginator(products, 9)
+
+    page_number = request.GET.get("page")
+    if page_number is None:
+        page_number = 1
+    page_obj = paginator.get_page(page_number)
+    page_obj.adjusted_elided_pages = paginator.get_elided_page_range(page_number)
+
+    context = {"page_obj": page_obj, 'query': query}
+    return render(request, 'Shop/shop.html', context)

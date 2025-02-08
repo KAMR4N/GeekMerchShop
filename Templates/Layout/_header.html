@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load filters %}
 <header>
   <!-- Header -->
   <div class="fixed left-0 right-0 top-0 z-30 bg-muted">
@@ -43,52 +43,6 @@
               class="absolute inset-x-0 top-full hidden w-full overflow-hidden rounded-b-lg border border-t-transparent bg-muted dark:border-white/10 dark:border-t-transparent"
             >
               <div class="max-h-[450px] overflow-y-auto py-5">
-                <!-- Result -->
-                <div class="mb-8 px-5">
-                  <div class="swiper search-result-desktop">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <a
-                          href="#"
-                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
-                        >
-                          <img
-                            src="./assets/images/products/p6.png"
-                            alt="Product Image"
-                            class="w-16"
-                          />
-                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
-                        </a>
-                      </div>
-                      <div class="swiper-slide">
-                        <a
-                          href="#"
-                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
-                        >
-                          <img
-                            src="./assets/images/products/p4.png"
-                            alt="Product Image"
-                            class="w-16"
-                          />
-                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
-                        </a>
-                      </div>
-                      <div class="swiper-slide">
-                        <a
-                          href="#"
-                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
-                        >
-                          <img
-                            src="./assets/images/products/p5.png"
-                            alt="Product Image"
-                            class="w-16"
-                          />
-                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="space-y-6">
                   <!-- Recent searches -->
                   <div class="px-5">
@@ -403,20 +357,25 @@
                 <span
                   class="absolute -right-2.5 -top-2.5 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full bg-primary-btn text-sm font-bold text-white"
                 >
-                  10
+                {% if cart_details %}
+                  {{cart_details|length}}
+                  {%else%}
+                  0
+                  {%endif%}
                 </span>
               </button>
               {% if user.is_authenticated %}
+              {% if order != None and cart_details|length > 0 %}
               <div
                 class="z-10 !ml-5 hidden w-[400px] overflow-hidden rounded-lg border-t-2 border-t-primary bg-muted"
                 id="dropdownBasketDesktop"
               >
                 <!-- Head -->
                 <div class="flex items-center justify-between p-5 pb-2">
-                  <div class="text-sm text-text/90">4 مورد</div>
+                  <div class="text-sm text-text/90">{{cart_details|length}} مورد</div>
                   <a
                     class="flex items-center gap-x-1 text-sm text-primary"
-                    href="./checkout-cart.html"
+                    href="/cart"
                   >
                     <div>مشاهده سبد خرید</div>
                     <div>
@@ -428,30 +387,32 @@
                 </div>
                 <!-- Items -->
                 <div class="h-60">
+                  {% if order != None and cart_details|length > 0 %}
                   <ul
                     class="main-scroll h-full space-y-2 divide-y overflow-y-auto p-5 pl-2"
                   >
+                  {% for detail in cart_details %}
                     <li>
                       <div class="flex gap-x-2 py-5">
                         <!-- Product Image -->
 
                         <div class="relative min-w-fit">
-                          <a href="./product-detail.html">
+                          <a href="/shop/product/{{detail.product.slug}}">
                             <img
                               alt=""
                               class="h-[120px] w-[120px]"
                               loading="lazy"
-                              src="./assets/images/products/p1.png"
+                              src="{{ detail.product.main_image.image.url}}"
                             />
                           </a>
-                          <button
+                          <a
                             class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
-                            type="button"
+                            href="{% url 'remove-item-order' detail.id%}"
                           >
                             <svg class="h-6 w-6 text-red-600 dark:text-red-500">
                               <use xlink:href="#close" />
                             </svg>
-                          </button>
+                          </a>
                         </div>
 
                         <div class="w-full space-y-1.5">
@@ -459,50 +420,43 @@
 
                           <a
                             class="line-clamp-2 h-12"
-                            href="./product-detail.html"
+                            href="/shop/product/{{detail.product.slug}}"
                           >
-                            تیشرت اسپورت مردانه
+                          {{ detail.product.title}}
                           </a>
                           <!-- Product Attribute -->
                           <div
                             class="flex items-center gap-x-2 text-sm text-text/60"
                           >
-                            <div>تعداد : 2</div>
+                            <div>تعداد : {{detail.count}}</div>
                             <div
                               class="h-3 w-px rounded-full bg-background"
                             ></div>
-                            <div class="flex items-center gap-x-2">
-                              <span
-                                class="h-4 w-4 rounded-full"
-                                style="background: rgb(128, 128, 128)"
-                              ></span>
-                              <span> طوسی</span>
-                            </div>
                           </div>
                           <div
                             class="flex items-center justify-between gap-x-2"
                           >
                             <!-- Product Price -->
                             <div class="text-primary">
-                              <span class="text-lg font-bold">1,800,000</span>
+                              <span class="text-lg font-bold">{{ detail.price|comma_separate }}</span>
                               <span class="text-sm">تومان</span>
                             </div>
                             <!-- Product Quantity -->
                             <div
                               class="flex h-10 w-24 items-center justify-between rounded-lg border px-2 py-1"
                             >
-                              <button type="button" data-action="increment">
+                              <button type="button" data-action="increment" disabled>
                                 <svg class="h-5 w-5 text-primary">
                                   <use xlink:href="#plus" />
                                 </svg>
                               </button>
                               <input
-                                value="1"
+                                value="{{detail.count}}"
                                 disabled
                                 type="number"
                                 class="flex h-5 w-full grow select-none items-center justify-center bg-transparent text-center text-sm outline-none"
                               />
-                              <button type="button" data-action="decrement">
+                              <button type="button" data-action="decrement" disabled>
                                 <svg
                                   class="h-5 w-5 text-red-600 dark:text-red-500"
                                 >
@@ -514,90 +468,9 @@
                         </div>
                       </div>
                     </li>
-                    <li>
-                      <div class="flex gap-x-2 py-5">
-                        <!-- Product Image -->
-
-                        <div class="relative min-w-fit">
-                          <a href="./product-detail.html">
-                            <img
-                              alt=""
-                              class="h-[120px] w-[120px]"
-                              loading="lazy"
-                              src="./assets/images/products/p2.png"
-                            />
-                          </a>
-                          <button
-                            class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
-                            type="button"
-                          >
-                            <svg class="h-6 w-6 text-red-600 dark:text-red-500">
-                              <use xlink:href="#close" />
-                            </svg>
-                          </button>
-                        </div>
-
-                        <div class="w-full space-y-1.5">
-                          <!-- Product Title -->
-
-                          <a
-                            class="line-clamp-2 h-12"
-                            href="./product-detail.html"
-                          >
-                            کلاه اسپورت مردانه
-                          </a>
-                          <!-- Product Attribute -->
-                          <div
-                            class="flex items-center gap-x-2 text-sm text-text/60"
-                          >
-                            <div>تعداد : 2</div>
-                            <div
-                              class="h-3 w-px rounded-full bg-background"
-                            ></div>
-                            <div class="flex items-center gap-x-2">
-                              <span
-                                class="h-4 w-4 rounded-full"
-                                style="background: rgb(128, 128, 128)"
-                              ></span>
-                              <span> طوسی</span>
-                            </div>
-                          </div>
-                          <div
-                            class="flex items-center justify-between gap-x-2"
-                          >
-                            <!-- Product Price -->
-                            <div class="text-primary">
-                              <span class="text-lg font-bold">1,800,000</span>
-                              <span class="text-sm">تومان</span>
-                            </div>
-                            <!-- Product Quantity -->
-                            <div
-                              class="flex h-10 w-24 items-center justify-between rounded-lg border px-2 py-1"
-                            >
-                              <button type="button" data-action="increment">
-                                <svg class="h-5 w-5 text-primary">
-                                  <use xlink:href="#plus" />
-                                </svg>
-                              </button>
-                              <input
-                                value="1"
-                                disabled
-                                type="number"
-                                class="flex h-5 w-full grow select-none items-center justify-center bg-transparent text-center text-sm outline-none"
-                              />
-                              <button type="button" data-action="decrement">
-                                <svg
-                                  class="h-5 w-5 text-red-600 dark:text-red-500"
-                                >
-                                  <use xlink:href="#trash" />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+                    {%endfor%}
                   </ul>
+                  {% endif %}
                 </div>
 
                 <!-- Footer -->
@@ -607,17 +480,38 @@
                     <div class="text-sm text-text/60">مبلغ قابل پرداخت</div>
 
                     <div class="text-text/90">
-                      <span class="font-bold">1,200,000</span>
+                      <span class="font-bold">{{order.get_total_price|comma_separate}}</span>
                       <span class="text-sm">تومان</span>
                     </div>
                   </div>
-                  <a href="./checkout-shipping.html">
+                  <a href="/cart">
                     <button class="btn-primary w-32 py-3 text-sm" type="button">
                       ثبت سفارش
                     </button>
                   </a>
                 </div>
               </div>
+                {%else%}
+                              <!--Empty Basket -->
+              <div
+              class="z-10 !ml-5 hidden w-[400px] overflow-hidden rounded-lg border-t-2 border-t-primary bg-muted  "
+              id="dropdownBasketDesktop"
+      >
+          <div class="flex justify-center items-center py-6">
+              <div class="flex items-center justify-center flex-col gap-y-4">
+                  <svg class="w-20 h-20  text-text/90  ">
+                      <use xlink:href="#order-off"/>
+                  </svg>
+                  <p class=" text-text/90   text-lg">
+                      سبد خرید شما خالی میباشد
+                  </p>
+                  <a class="btn-primary w-full py-3" href="/shop">
+                      فروشگاه
+                  </a>
+              </div>
+          </div>
+      </div>
+                {% endif %}
               {% else %}
               <!--Empty Basket -->
               <div

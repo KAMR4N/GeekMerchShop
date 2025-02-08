@@ -11,6 +11,7 @@ import re
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileEditForm
 from django.contrib import messages
+from Apps.Shop.models import Order
 
 
 def login_user(request):
@@ -239,23 +240,29 @@ def logout_user(request):
     logout(request)
     return redirect("index")
 
-
+@login_required(login_url='/login', )
 def profile(request):
-    context = {}
+    paid_orders = Order.objects.filter(owner_id=request.user.id, is_paid=True).all()
+    context = {
+        "paid_orders": paid_orders,
+    }
     return render(request, "Profile/_dashboard.html", context)
 
-
+@login_required(login_url='/login', )
 def profile_orders(request):
-    context = {}
+    paid_orders = Order.objects.filter(owner_id=request.user.id, is_paid=True).all()
+    context = {
+        "paid_orders": paid_orders,
+    }
     return render(request, "Profile/_orders.html", context)
 
-
+@login_required(login_url='/login', )
 def profile_address(request):
     context = {}
     return render(request, "Profile/_address.html", context)
 
 
-@login_required()
+@login_required(login_url='/login', )
 def profile_edit(request):
     context = {}
     username = request.user.username

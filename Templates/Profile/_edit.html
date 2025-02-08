@@ -183,28 +183,6 @@
           </div>
         </button>
       </div>
-      <!-- birth date   -->
-      <div class="col-span-2 sm:col-span-1">
-        <button
-          class="w-full"
-          type="button"
-          data-modal-target="birthDate-modal"
-          data-modal-toggle="birthDate-modal"
-        >
-          <div class="relative rounded-lg border p-4 hover:border-border/50">
-            <div class="flex justify-between">
-              <div class="flex flex-col items-start gap-y-2">
-                <div class="text-text/90">تاریخ تولد</div>
-
-                <div class="mr-2 select-none text-text/60">{% if user.birth_date %} {{ user.birth_date }} {%else%} ثبت نشده {%endif%}</div>
-              </div>
-              <svg class="h-6 w-6 text-primary">
-                <use xlink:href="#edit" />
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
     </div>
   </div>
 </div>

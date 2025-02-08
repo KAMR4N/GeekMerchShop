@@ -32,18 +32,17 @@
               <span class="text-sm text-text/60"> ( {{details|length}} کالا ) </span>
             </h1>
             {% if order != None and details|length > 0 %}
-            <button type="button" class="btn-red-nobg px-3 py-2 text-sm">
+            <a href="/cart/remove-all-order" class="btn-red-nobg px-3 py-2 text-sm">
               <span>
                 <svg class="h-6 w-6">
                   <use xlink:href="#trash"></use>
                 </svg>
               </span>
               <span>حذف همه</span>
-            </button>
+            </a>
             {% endif %}
           </div>
           {% if order != None and details|length > 0 %}
-
           <ul class="divide-y">
             {% for detail in details %}
             <!-- Cart Item-->
@@ -117,6 +116,20 @@
             </li>
             {% endfor %}
           </ul>
+          {% else %}
+          <div class="flex justify-center items-center py-6">
+            <div class="flex items-center justify-center flex-col gap-y-4">
+                <svg class="w-20 h-20  text-text/90  ">
+                    <use xlink:href="#order-off"/>
+                </svg>
+                <p class=" text-text/90   text-lg">
+                    سبد خرید شما خالی میباشد
+                </p>
+                <a class="btn-primary w-full py-3" href="/shop">
+                    فروشگاه
+                </a>
+            </div>
+          </div>
           {% endif %}
         </div>
       </div>
@@ -151,9 +164,11 @@
             </div>
           </div>
           <div>
-            <a href="{% url 'checkout' %}" class="btn-primary py-3">
+            {% if order != None and details|length > 0 %}
+            <a href="{% url 'payment' %}" class="btn-primary py-3">
               ادامه فرایند خرید
             </a>
+            {% endif %}
           </div>
         </div>
         <!-- Mobile -->

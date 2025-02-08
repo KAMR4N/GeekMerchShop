@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from Apps.Settings.models import GeneralSettings, Banner, CategoryImage
-from Apps.Shop.models import Category, Product
+from Apps.Shop.models import Category, Product,Order
 
 # from Product.models import Product, News
 
@@ -13,6 +13,10 @@ def header(request, *args, **kwargs):
         "categories": categories,
         "general_settings": general_settings,
     }
+    open_order: Order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
+    if open_order is not None:
+        context['order'] = open_order
+        context['cart_details'] = open_order.orderdetail_set.all()
     return render(request, "Layout/_header.html", context)
 
 
@@ -56,11 +60,13 @@ def contact(request):
     return render(request, "contact.html", context)
 
 
-def about_us(request):
+def faq(request):
     context = {}
-    return render(request, "about.html", context)
+    return render(request, "faq.html", context)
 
-
-def services(request):
-    context = {}
-    return render(request, "services.html", context)
+def how_to_buy(request):
+    general_settings = GeneralSettings.objects.first()
+    context = {
+        "description": general_settings.how_to_buy,
+    }
+    return render(request, "how-to-buy.html", context)
