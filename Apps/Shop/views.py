@@ -93,3 +93,14 @@ def remove_item_order(request, *args, **kwargs):
         messages.success(request, "محصول از سبد خرید حذف شد")
         return redirect('/cart')
     raise Http404()
+
+@login_required(login_url='/login', )
+def remove_all_order(request, *args, **kwargs):
+    detail_id = kwargs.get('detail_id')
+    if detail_id is not None:
+        order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order__owner=request.user.id)
+        if order_detail is not None:
+            order_detail.delete()
+        messages.success(request, "محصول از سبد خرید حذف شد")
+        return redirect('/cart')
+    raise Http404()
