@@ -1,0 +1,1810 @@
+{% load static %}
+<header>
+  <!-- Header -->
+  <div class="fixed left-0 right-0 top-0 z-30 bg-muted">
+    <!-- Header Desktop -->
+    <div>
+      <div class="hidden md:block">
+        <!-- Top Section -->
+        <div
+          class="container relative z-30 flex max-w-[1680px] items-center justify-between gap-x-4 bg-muted py-4"
+        >
+          <!-- logo -->
+          <div>
+            <a href="/">
+              <img
+                alt=""
+                class="w-44 text-red-700"
+                src="{{ general_settings.header_logo_image.url }}"
+              />
+            </a>
+          </div>
+          <!-- Search -->
+          <div class="relative max-w-xl flex-1" id="desktopHeaderSearchBase">
+            <div
+              id="desktopHeaderSearchWrapper"
+              class="flex items-center justify-between rounded-lg border-b-transparent bg-background px-2 dark:border-white/10 dark:border-b-transparent"
+            >
+              <div>
+                <svg class="h-6 w-6">
+                  <use xlink:href="#search" />
+                </svg>
+              </div>
+              <label class="sr-only">desktop header search</label>
+              <input
+                id="desktopHeaderSearch"
+                class="flex grow rounded-lg border-none bg-background px-2 py-3 text-text/90 outline-none placeholder:text-sm placeholder:text-text/60 focus:ring-0 placeholder:"
+                placeholder="جستجو کنید ..."
+                type="text"
+              />
+            </div>
+            <div
+              id="desktopHeaderSearchResult"
+              class="absolute inset-x-0 top-full hidden w-full overflow-hidden rounded-b-lg border border-t-transparent bg-muted dark:border-white/10 dark:border-t-transparent"
+            >
+              <div class="max-h-[450px] overflow-y-auto py-5">
+                <!-- Result -->
+                <div class="mb-8 px-5">
+                  <div class="swiper search-result-desktop">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a
+                          href="#"
+                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                        >
+                          <img
+                            src="./assets/images/products/p6.png"
+                            alt="Product Image"
+                            class="w-16"
+                          />
+                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a
+                          href="#"
+                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                        >
+                          <img
+                            src="./assets/images/products/p4.png"
+                            alt="Product Image"
+                            class="w-16"
+                          />
+                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a
+                          href="#"
+                          class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                        >
+                          <img
+                            src="./assets/images/products/p5.png"
+                            alt="Product Image"
+                            class="w-16"
+                          />
+                          <p class="line-clamp-2">کفش نایک کفش نایک کفش نایک</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-6">
+                  <!-- Recent searches -->
+                  <div class="px-5">
+                    <div class="mb-4 flex items-center gap-x-2 text-text/90">
+                      <svg class="h-6 w-6">
+                        <use xlink:href="#recent" />
+                      </svg>
+                      <p>جستجو های اخیر شما</p>
+                    </div>
+                    <div class="swiper search-result-desktop h-14">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Top searches -->
+
+                  <div class="px-5">
+                    <div class="mb-4 flex items-center gap-x-2 text-text/90">
+                      <svg class="h-6 w-6">
+                        <use xlink:href="#special-sale" />
+                      </svg>
+                      <p>جستجو های پرطرفدار</p>
+                    </div>
+                    <div class="swiper search-result-desktop h-14">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                          >
+                            <p class="line-clamp-1">کفش نایک</p>
+                            <svg class="h-4 w-4">
+                              <use xlink:href="#chevron-left" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cart, Theme, Account -->
+          <div class="flex gap-x-4">
+            <!-- Account -->
+
+            <div>
+              {% if user.is_authenticated %}
+              <button
+                class=" "
+                data-dropdown-toggle="dropdownAccountDesktop"
+                id="dropdownDefaultButton"
+                type="button"
+              >
+                <svg class="h-6 w-6">
+                  <use xlink:href="#user" />
+                </svg>
+              </button>
+
+              <div
+                class="z-10 !ml-5 hidden w-60 overflow-hidden rounded-lg border-t-2 border-t-primary bg-muted"
+                id="dropdownAccountDesktop"
+              >
+                <ul class="space-y-1 p-2">
+                  <li>
+                    <a
+                      class="flex items-center justify-between gap-x-2 rounded-lg p-4 hover:text-primary dark:hover:text-emerald-400"
+                      href="/profile/dashboard"
+                    >
+                      <span class="flex items-center gap-x-4">
+                        <span class="min-w-fit">
+                          <img
+                            alt="profile"
+                            class="h-8 w-8 rounded-full"
+                            src="/assets/images/user.png"
+                          />
+                        </span>
+                        <span class="line-clamp-1">{% if user.first_name %} {{ user.first_name }} {{ user.last_name }} {% else %}{{ user.username }} {% endif %}</span>
+                      </span>
+                      <span>
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#chevron-left" />
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="flex items-center justify-between rounded-lg p-4 hover:text-primary dark:hover:text-emerald-400"
+                      href="/profile/orders"
+                    >
+                      <span class="flex items-center gap-x-2">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#order" />
+                        </svg>
+                        <span> سفارش ها </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center justify-between rounded-lg p-4 hover:text-primary dark:hover:text-emerald-400"
+                      href="/profile/address"
+                    >
+                      <span class="flex items-center gap-x-2">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#address" />
+                        </svg>
+                        <span> آدرس ها </span>
+                      </span>
+                    </a>
+                  </li>
+                  {% comment %} <li>
+                    <a
+                      class="flex items-center justify-between rounded-lg p-4 hover:text-primary dark:hover:text-emerald-400"
+                      href="./profile-favorite.html"
+                    >
+                      <span class="flex items-center gap-x-2">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#heart" />
+                        </svg>
+                        <span> علاقه‌مندی ها </span>
+                      </span>
+                    </a>
+                  </li> {% endcomment %}
+                  {% comment %} <li>
+                    <a
+                      class="flex items-center justify-between rounded-lg p-4 hover:text-primary dark:hover:text-emerald-400"
+                      href="./profile-notification.html"
+                    >
+                      <span class="flex items-center gap-x-2">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#notification" />
+                        </svg>
+                        <span> پیام ها </span>
+                      </span>
+
+                      <span class="relative flex h-5 w-5">
+                        <span
+                          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+                        ></span>
+                        <span
+                          class="relative inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-btn text-sm text-white"
+                          >2</span
+                        >
+                      </span>
+                    </a>
+                  </li> {% endcomment %}
+                  <li>
+                    <div class="my-2 h-px w-full rounded-full bg-border"></div>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center justify-between rounded-lg p-4 text-red-500 hover:bg-warning/10 dark:text-red-400 dark:hover:bg-red-400/10"
+                      href="/logout"
+                    >
+                      <div class="flex items-center gap-x-2">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#exit" />
+                        </svg>
+                        <span> خروج </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {% else %}
+              <a href="/login">
+                  <div
+                    class="flex h-8 cursor-pointer items-center justify-center rounded-lg border  px-4 text-sm font-medium  transition-colors duration-200 hover:bg-primary hover:text-white    dark:hover:bg-primary dark:hover:text-white"
+                  >
+                    ورود \ ثبت نام
+                  </div>
+                </a>
+              {% endif%}
+            </div>
+            <!-- Basket -->
+            <div>
+              <button
+                class="group relative"
+                data-dropdown-toggle="dropdownBasketDesktop"
+                type="button"
+              >
+                <span class="cursor-pointer">
+                  <svg class="h-6 w-6">
+                    <use xlink:href="#cart" />
+                  </svg>
+                </span>
+                <span
+                  class="absolute -right-2.5 -top-2.5 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full bg-primary-btn text-sm font-bold text-white"
+                >
+                  10
+                </span>
+              </button>
+              {% if user.is_authenticated %}
+              <div
+                class="z-10 !ml-5 hidden w-[400px] overflow-hidden rounded-lg border-t-2 border-t-primary bg-muted"
+                id="dropdownBasketDesktop"
+              >
+                <!-- Head -->
+                <div class="flex items-center justify-between p-5 pb-2">
+                  <div class="text-sm text-text/90">4 مورد</div>
+                  <a
+                    class="flex items-center gap-x-1 text-sm text-primary"
+                    href="./checkout-cart.html"
+                  >
+                    <div>مشاهده سبد خرید</div>
+                    <div>
+                      <svg class="h-5 w-5">
+                        <use xlink:href="#chevron-left" />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                <!-- Items -->
+                <div class="h-60">
+                  <ul
+                    class="main-scroll h-full space-y-2 divide-y overflow-y-auto p-5 pl-2"
+                  >
+                    <li>
+                      <div class="flex gap-x-2 py-5">
+                        <!-- Product Image -->
+
+                        <div class="relative min-w-fit">
+                          <a href="./product-detail.html">
+                            <img
+                              alt=""
+                              class="h-[120px] w-[120px]"
+                              loading="lazy"
+                              src="./assets/images/products/p1.png"
+                            />
+                          </a>
+                          <button
+                            class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                            type="button"
+                          >
+                            <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                              <use xlink:href="#close" />
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="w-full space-y-1.5">
+                          <!-- Product Title -->
+
+                          <a
+                            class="line-clamp-2 h-12"
+                            href="./product-detail.html"
+                          >
+                            تیشرت اسپورت مردانه
+                          </a>
+                          <!-- Product Attribute -->
+                          <div
+                            class="flex items-center gap-x-2 text-sm text-text/60"
+                          >
+                            <div>تعداد : 2</div>
+                            <div
+                              class="h-3 w-px rounded-full bg-background"
+                            ></div>
+                            <div class="flex items-center gap-x-2">
+                              <span
+                                class="h-4 w-4 rounded-full"
+                                style="background: rgb(128, 128, 128)"
+                              ></span>
+                              <span> طوسی</span>
+                            </div>
+                          </div>
+                          <div
+                            class="flex items-center justify-between gap-x-2"
+                          >
+                            <!-- Product Price -->
+                            <div class="text-primary">
+                              <span class="text-lg font-bold">1,800,000</span>
+                              <span class="text-sm">تومان</span>
+                            </div>
+                            <!-- Product Quantity -->
+                            <div
+                              class="flex h-10 w-24 items-center justify-between rounded-lg border px-2 py-1"
+                            >
+                              <button type="button" data-action="increment">
+                                <svg class="h-5 w-5 text-primary">
+                                  <use xlink:href="#plus" />
+                                </svg>
+                              </button>
+                              <input
+                                value="1"
+                                disabled
+                                type="number"
+                                class="flex h-5 w-full grow select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                              />
+                              <button type="button" data-action="decrement">
+                                <svg
+                                  class="h-5 w-5 text-red-600 dark:text-red-500"
+                                >
+                                  <use xlink:href="#minus" />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="flex gap-x-2 py-5">
+                        <!-- Product Image -->
+
+                        <div class="relative min-w-fit">
+                          <a href="./product-detail.html">
+                            <img
+                              alt=""
+                              class="h-[120px] w-[120px]"
+                              loading="lazy"
+                              src="./assets/images/products/p2.png"
+                            />
+                          </a>
+                          <button
+                            class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                            type="button"
+                          >
+                            <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                              <use xlink:href="#close" />
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="w-full space-y-1.5">
+                          <!-- Product Title -->
+
+                          <a
+                            class="line-clamp-2 h-12"
+                            href="./product-detail.html"
+                          >
+                            کلاه اسپورت مردانه
+                          </a>
+                          <!-- Product Attribute -->
+                          <div
+                            class="flex items-center gap-x-2 text-sm text-text/60"
+                          >
+                            <div>تعداد : 2</div>
+                            <div
+                              class="h-3 w-px rounded-full bg-background"
+                            ></div>
+                            <div class="flex items-center gap-x-2">
+                              <span
+                                class="h-4 w-4 rounded-full"
+                                style="background: rgb(128, 128, 128)"
+                              ></span>
+                              <span> طوسی</span>
+                            </div>
+                          </div>
+                          <div
+                            class="flex items-center justify-between gap-x-2"
+                          >
+                            <!-- Product Price -->
+                            <div class="text-primary">
+                              <span class="text-lg font-bold">1,800,000</span>
+                              <span class="text-sm">تومان</span>
+                            </div>
+                            <!-- Product Quantity -->
+                            <div
+                              class="flex h-10 w-24 items-center justify-between rounded-lg border px-2 py-1"
+                            >
+                              <button type="button" data-action="increment">
+                                <svg class="h-5 w-5 text-primary">
+                                  <use xlink:href="#plus" />
+                                </svg>
+                              </button>
+                              <input
+                                value="1"
+                                disabled
+                                type="number"
+                                class="flex h-5 w-full grow select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                              />
+                              <button type="button" data-action="decrement">
+                                <svg
+                                  class="h-5 w-5 text-red-600 dark:text-red-500"
+                                >
+                                  <use xlink:href="#trash" />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Footer -->
+
+                <div class="flex items-center justify-between border-t p-5">
+                  <div class="flex flex-col items-center gap-y-1">
+                    <div class="text-sm text-text/60">مبلغ قابل پرداخت</div>
+
+                    <div class="text-text/90">
+                      <span class="font-bold">1,200,000</span>
+                      <span class="text-sm">تومان</span>
+                    </div>
+                  </div>
+                  <a href="./checkout-shipping.html">
+                    <button class="btn-primary w-32 py-3 text-sm" type="button">
+                      ثبت سفارش
+                    </button>
+                  </a>
+                </div>
+              </div>
+              {% else %}
+              <!--Empty Basket -->
+              <div
+                      class="z-10 !ml-5 hidden w-[400px] overflow-hidden rounded-lg border-t-2 border-t-primary bg-muted  "
+                      id="dropdownBasketDesktop"
+              >
+                  <div class="flex justify-center items-center py-6">
+                      <div class="flex items-center justify-center flex-col gap-y-4">
+                          <svg class="w-20 h-20  text-text/90  ">
+                              <use xlink:href="#order-off"/>
+                          </svg>
+                          <p class=" text-text/90   text-lg">
+                              سبد خرید شما خالی میباشد
+                          </p>
+                          <a class="btn-primary w-full py-3" href="/shop">
+                              فروشگاه
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              {% endif %}
+            </div>
+            <!-- Theme -->
+            <div class="cursor-pointer" id="toggleThemeDesktop">
+              <div class="dark:hidden">
+                <svg class="h-6 w-6">
+                  <use xlink:href="#moon" />
+                </svg>
+              </div>
+              <div class="hidden dark:block">
+                <svg class="h-6 w-6">
+                  <use xlink:href="#sun" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div
+          class="absolute left-0 right-0 top-full z-20 bg-muted shadow-sm transition-transform duration-300"
+          data-onscrollclass="-translate-y-full"
+        >
+          <nav
+            id="header-desktop-navbar"
+            class="container relative flex max-w-[1680px] items-center gap-x-2"
+          >
+            {% if categories %}
+            <ul class="group z-10" id="desktopMegamenuWrapper">
+              <div
+                class="relative flex cursor-pointer items-center gap-x-2 pb-2"
+              >
+                <div>
+                  <svg class="h-5 w-5">
+                    <use xlink:href="#menu"></use>
+                  </svg>
+                </div>
+                <div>دسته‌ بندی‌ ها</div>
+              </div>
+
+              <!-- Mega menu -->
+
+              <div class="absolute top-full w-full max-w-[1000px]">
+                <div
+                  class="relative hidden rounded-b-lg bg-muted shadow-base"
+                  id="desktopMegamenu"
+                >
+                  <div
+                    class="flex h-[450px] max-h-[450px] w-full overflow-hidden rounded-b-lg pt-0.5"
+                  >
+                    <!-- Right side -->
+                    <div
+                      class="main-scroll w-50 overflow-y-auto bg-background"
+                      dir="ltr"
+                    >
+                      <ul dir="rtl" id="mega-menu-parents">
+                        {% for root_category in categories %}
+                        <li>
+                          <a
+                            class="flex py-4 pr-4"
+                            href="{{ root_category.slug }}"
+                          >
+                            {{ root_category.title }}
+                          </a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <!-- Left side -->
+
+                    <div
+                      class="main-scroll h-[450px] max-h-[450px] w-full overflow-auto"
+                      dir="ltr"
+                    >
+                      <div
+                        class="flex flex-grow p-5"
+                        dir="rtl"
+                        id="mega-menu-childs"
+                      >
+                        {% for root_category in categories %}
+                        <!-- categories Child -->
+                        <div class="hidden">
+                          <!-- head -->
+                          <div class="mb-4">
+                            <a
+                              class="flex items-center gap-x-1 py-2 text-sm text-primary"
+                              href="{{ root_category.slug }}"
+                            >
+                              <div>مشاهده همه</div>
+                              <svg class="h-5 w-5">
+                                <use xlink:href="#chevron-left"></use>
+                              </svg>
+                            </a>
+                          </div>
+                          <div
+                            class="flex flex-grow flex-wrap gap-x-14 gap-y-8"
+                          >
+                            {% for sub_category in root_category.get_children %}
+                            <div class="space-y-2">
+                              <a
+                                class="flex items-center gap-x-2 hover:text-primary"
+                                href="{{ sub_category.slug }}"
+                              >
+                                <span
+                                  class="h-5 w-0.5 rounded-full bg-primary dark:bg-primary"
+                                ></span>
+                                <div>{{ sub_category.title }}</div>
+                                <svg class="h-5 w-5">
+                                  <use xlink:href="#chevron-left"></use>
+                                </svg>
+                              </a>
+                              <ul>
+                                {% for child_category in sub_category.get_children %}
+                                <li>
+                                  <a
+                                    class="block py-2 text-sm text-text/90 hover:text-primary"
+                                    href="{{ child_category.slug }}"
+                                  >
+                                    {{ child_category.title }}
+                                  </a>
+                                </li>
+                                {% endfor %}
+                              </ul>
+                            </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+            {% endif %} {% for item in general_settings.header_menu_items %}
+             {% if item.children %}
+            <ul
+              {% if item.special%}data-color-dark="#f87171" data-color-light="#ef4444"{%endif%}
+              class="group relative z-10"
+              id="header-desktop-indicator"
+            >
+              <div class="flex cursor-pointer items-center gap-x-2 p-2 pt-0">
+                سایر
+                <span class="text-primary">...</span>
+              </div>
+              <div
+                class="absolute right-0 top-full hidden w-44 overflow-hidden rounded-b-lg bg-muted group-hover:block"
+              >
+                <ul class="space-y-1 p-2">
+                  {% for sub_item in item.children %}
+                  <li>
+                    <a
+                      class="hover:dark: flex rounded-lg px-4 py-3 hover:text-primary"
+                      href="{{ sub_item.url }}"
+                    >
+                      {{ sub_item.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </ul>
+            {% else %}
+            <ul
+            {% if item.special%}data-color-dark="#f87171" data-color-light="#ef4444"{%endif%}
+            >
+              <a class="group" href="{{item.url}}">
+                <div class="p-2 pt-0">{{ item.title }}</div>
+              </a>
+            </ul>
+            {% endif%} {% endfor %}
+
+            <div
+              id="header-desktop-navbar-indicator"
+              class="absolute bottom-0 h-[0.15625rem] z-0 rounded-2xl end-0 transition-all duration-[350ms] w-0"
+            ></div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Desktop -->
+    <div>
+      <div class="md:hidden">
+        <!-- Top Section -->
+        <div
+          class="container relative z-30 flex h-16 items-center justify-between gap-x-4 bg-muted"
+        >
+          <!-- menu -->
+          <button
+            aria-controls="mobile-menu-drawer-navigation"
+            class="cursor-pointer"
+            data-drawer-show="mobile-menu-drawer-navigation"
+            data-drawer-target="mobile-menu-drawer-navigation"
+            type="button"
+          >
+            <svg class="h-6 w-6">
+              <use xlink:href="#menu" />
+            </svg>
+          </button>
+
+          <!-- logo -->
+          <div>
+            <a href="/">
+              <img
+                alt=""
+                class="h-6 w-full rounded-lg xs:h-10"
+                src="{{ general_settings.header_logo_image.url }}"
+              />
+            </a>
+          </div>
+          <div class="flex gap-x-4">
+            {% if user.is_authenticated %}
+
+            <!-- Account -->
+            <button
+              aria-controls="user-account-drawer-navigation"
+              class="cursor-pointer"
+              data-drawer-show="user-account-drawer-navigation"
+              data-drawer-target="user-account-drawer-navigation"
+              type="button"
+            >
+              <svg class="h-6 w-6">
+                <use xlink:href="#user" />
+              </svg>
+            </button>
+
+            <!-- Cart -->
+            <button
+              aria-controls="user-basket-drawer-navigation"
+              class="relative"
+              data-drawer-show="user-basket-drawer-navigation"
+              data-drawer-target="user-basket-drawer-navigation"
+              type="button"
+            >
+              <span class="cursor-pointer">
+                <svg class="h-6 w-6">
+                  <use xlink:href="#cart" />
+                </svg>
+              </span>
+              <span
+                class="absolute -right-2.5 -top-2.5 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full bg-primary-btn text-sm font-bold text-white"
+              >
+                10
+              </span>
+            </button>
+
+            {% else %}
+            <a href="/login">
+              <div
+                class="flex h-8 cursor-pointer items-center justify-center rounded-lg border px-4 text-xs font-medium transition-colors duration-200 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white xs:text-sm"
+              >
+                ورود \ ثبت نام
+              </div>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Bottom Section -->
+        <div
+          class="absolute left-0 right-0 top-full z-20 bg-muted pb-4 transition-transform duration-300"
+          id="mobile-header-bottom"
+        >
+          <div class="container">
+            <div class="relative" id="mobileHeaderSearchBase">
+              <div
+                id="mobileHeaderSearchWrapper"
+                class="flex items-center justify-between rounded-lg border-b-transparent bg-background px-2 dark:border-white/10 dark:border-b-transparent"
+              >
+                <div>
+                  <svg class="h-6 w-6">
+                    <use xlink:href="#search" />
+                  </svg>
+                </div>
+                <label class="sr-only">Mobile header search</label>
+                <input
+                  id="mobileHeaderSearch"
+                  class="flex grow rounded-lg border-none bg-background px-2 py-3 outline-none placeholder:text-sm placeholder:text-text/60 focus:ring-0 placeholder:"
+                  placeholder="جستجو کنید ..."
+                  type="text"
+                />
+              </div>
+              <div
+                id="mobileHeaderSearchResult"
+                class="absolute inset-x-0 top-full hidden w-full overflow-hidden rounded-b-lg border border-t-transparent bg-muted dark:border-white/10 dark:border-t-transparent"
+              >
+                <div class="max-h-[450px] overflow-y-auto py-5">
+                  <!-- Result -->
+                  <div class="mb-8 px-5">
+                    <div class="swiper search-result-desktop">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                          >
+                            <img
+                              src="./assets/images/products/p6.png"
+                              alt="Product Image"
+                              class="w-16"
+                            />
+                            <p class="line-clamp-2">
+                              کفش نایک کفش نایک کفش نایک
+                            </p>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                          >
+                            <img
+                              src="./assets/images/products/p4.png"
+                              alt="Product Image"
+                              class="w-16"
+                            />
+                            <p class="line-clamp-2">
+                              کفش نایک کفش نایک کفش نایک
+                            </p>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a
+                            href="#"
+                            class="flex items-center gap-x-2 rounded-xl border px-4 py-2 text-text/60 hover:border-border/50"
+                          >
+                            <img
+                              src="./assets/images/products/p5.png"
+                              alt="Product Image"
+                              class="w-16"
+                            />
+                            <p class="line-clamp-2">
+                              کفش نایک کفش نایک کفش نایک
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <!-- Recent searches -->
+                    <div class="px-5">
+                      <div class="mb-4 flex items-center gap-x-2 text-text/90">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#recent" />
+                        </svg>
+                        <p>جستجو های اخیر شما</p>
+                      </div>
+                      <div class="swiper search-result-desktop h-14">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Top searches -->
+
+                    <div class="px-5">
+                      <div class="mb-4 flex items-center gap-x-2 text-text/90">
+                        <svg class="h-6 w-6">
+                          <use xlink:href="#special-sale" />
+                        </svg>
+                        <p>جستجو های پرطرفدار</p>
+                      </div>
+                      <div class="swiper search-result-desktop h-14">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a
+                              href="#"
+                              class="flex items-center justify-center gap-x-2 rounded-full border p-2 text-text/60 hover:border-border/50"
+                            >
+                              <p class="line-clamp-1">کفش نایک</p>
+                              <svg class="h-4 w-4">
+                                <use xlink:href="#chevron-left" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="fixed inset-0 z-20 hidden bg-black/40 backdrop-blur-md /40"
+    id="header-overlay"
+  ></div>
+</header>
+
+<!-- Header Mobile drawers -->
+<div>
+  <!-- Mobile Main Menu Drawer -->
+
+  <div
+    aria-labelledby="mobile-menu-drawer-navigation"
+    class="fixed right-0 top-0 z-40 h-full w-80 translate-x-full overflow-y-auto bg-muted p-4 transition-transform duration-300"
+    id="mobile-menu-drawer-navigation"
+    tabindex="-1"
+  >
+    <div class="mb-6 flex items-center justify-between gap-x-4 border-b pb-5">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+          <img
+            alt=""
+            class="h-10 w-full rounded-lg"
+            src="{{ general_settings.header_logo_image.url }}"
+          />
+        </a>
+      </div>
+
+      <!-- Close Button -->
+      <button
+        aria-controls="mobile-menu-drawer-navigation"
+        class=" "
+        data-drawer-hide="mobile-menu-drawer-navigation"
+        type="button"
+      >
+        <svg class="h-5 w-5">
+          <use xlink:href="#close" />
+        </svg>
+
+        <span class="sr-only">Close menu</span>
+      </button>
+    </div>
+    <!-- Mobile Toggle Theme -->
+    <div class="mb-4">
+      <div
+        class="flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-3 text-primary"
+        id="toggleThemeMobile"
+      >
+        <div>
+          <div class="dark:hidden">
+            <svg class="h-6 w-6">
+              <use xlink:href="#moon" />
+            </svg>
+          </div>
+          <div class="hidden dark:block">
+            <svg class="h-6 w-6">
+              <use xlink:href="#sun" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between" id="themeText"></div>
+      </div>
+    </div>
+
+    <div class="overflow-y-auto">
+      <ul class="space-y-4">
+        {% for item in general_settings.header_menu_items %}
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 hover:text-primary"
+            href="{{ item.url }}"
+          >
+            <span class="flex items-center gap-x-2">
+              <svg class="h-6 w-6">
+                <use xlink:href="{{ item.svg_id }}" />
+              </svg>
+              <span>{{ item.title }}</span>
+            </span>
+          </a>
+        </li>
+        {% endfor %} {% if categories %}
+        <!-- Shop -->
+        <li>
+          <div class="flex items-center">
+            <div class="h-px w-full flex-grow rounded-full bg-border"></div>
+
+            <div class="p-2 text-text/80">
+              <span class="flex items-center gap-x-2">
+                <svg class="h-6 w-6">
+                  <use xlink:href="#order" />
+                </svg>
+              </span>
+            </div>
+            <div class="h-px w-full flex-grow rounded-full bg-border"></div>
+          </div>
+        </li>
+        {% endif %}
+
+        <!-- Categories -->
+        {% for root_category in categories %}
+        <li class="relative bg-muted border-b" data-accordion-item>
+          <div
+            class="w-full px-4 py-3 text-right cursor-pointer"
+            data-accordion-button
+          >
+            <div
+              class="flex items-center justify-between gap-2 text-sm md:text-base"
+            >
+              <span> {{ root_category.title }} </span>
+              <div class="min-w-fit">
+                <svg data-accordion-chevron class="h-5 w-5 duration-300">
+                  <use xlink:href="#chevron-left"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-300 mr-6 pb-2"
+            data-accordion-content
+          >
+            <ul class="pt-2">
+              <li>
+                <a
+                  class="flex w-full items-center justify-between rounded-lg py-3 text-sm"
+                  href="{{ root_category.slug }}"
+                >
+                  <span class="flex items-center gap-x-2">
+                    <span class="line-clamp-1">همه</span>
+                    <svg class="h-5 w-5">
+                      <use xlink:href="#chevron-left" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              {% for sub_category in root_category.get_children %}
+              <li class="relative" data-accordion-item>
+                <div
+                  class="w-full py-3 text-right cursor-pointer"
+                  data-accordion-button
+                >
+                  <div
+                    class="flex items-center justify-between gap-2 text-sm md:text-base"
+                  >
+                    <span> {{ sub_category.title }} </span>
+                    <div class="min-w-fit">
+                      <svg data-accordion-chevron class="h-5 w-5 duration-300">
+                        <use xlink:href="#chevron-left"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-300 mr-4 pb-2"
+                  data-accordion-content
+                >
+                  <ul class="pt-2">
+                    <li>
+                      <a
+                        class="flex w-full items-center justify-between rounded-lg py-3 text-sm"
+                        href="{{ sub_category.slug }}"
+                      >
+                        <span class="flex items-center gap-x-2">
+                          <span class="line-clamp-1">همه</span>
+                          <svg class="h-5 w-5">
+                            <use xlink:href="#chevron-left" />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+
+                    {% for child_category in sub_category.get_children %}
+                    <li>
+                      <a
+                        class="flex w-full items-center justify-between rounded-lg py-3 text-sm"
+                        href="{{ child_category.slug }}"
+                      >
+                        <span class="flex items-center gap-x-2">
+                          <span class="line-clamp-1">
+                            {{ child_category.title }}
+                          </span>
+                          <svg class="h-5 w-5">
+                            <use xlink:href="#chevron-left" />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mobile User Account Drawer -->
+
+  <div
+    aria-labelledby="user-account-drawer-navigation-label"
+    class="main-scroll fixed left-0 top-0 z-40 h-full w-80 -translate-x-full overflow-y-auto bg-muted p-4 pb-20 transition-transform duration-300"
+    id="user-account-drawer-navigation"
+    tabindex="-1"
+  >
+    <div class="mb-6 flex items-center justify-between gap-x-4 border-b pb-5">
+      <!-- Close Button -->
+      <button
+        aria-controls="user-account-drawer-navigation"
+        class=" "
+        data-drawer-hide="user-account-drawer-navigation"
+        type="button"
+      >
+        <svg class="h-5 w-5">
+          <use xlink:href="#close" />
+        </svg>
+
+        <span class="sr-only">Close menu</span>
+      </button>
+
+      <h5 class="text-lg">حساب کاربری</h5>
+    </div>
+    <div class="overflow-y-auto">
+      <ul class="space-y-4">
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 hover:text-primary"
+            href="./profile-dashboard.html"
+          >
+            <span class="flex items-center gap-x-4">
+              <span class="min-w-fit">
+                <img
+                  alt=""
+                  class="h-10 w-10 rounded-full"
+                  src="./assets/images/user.png"
+                />
+              </span>
+              <span class="line-clamp-1">تست تست تست تسستست تسست </span>
+            </span>
+            <span>
+              <svg class="h-6 w-6">
+                <use xlink:href="#chevron-left" />
+              </svg>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 hover:text-primary"
+            href="./profile-orders.html"
+          >
+            <span class="flex items-center gap-x-2">
+              <svg class="h-6 w-6">
+                <use xlink:href="#order" />
+              </svg>
+              <span> سفارش ها </span>
+            </span>
+            <span class="relative flex h-5 w-5">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-btn text-sm text-white"
+              >
+                2
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 hover:text-primary"
+            href="./profile-favorite.html"
+          >
+            <span class="flex items-center gap-x-2">
+              <svg class="h-6 w-6">
+                <use xlink:href="#heart" />
+              </svg>
+              <span> علاقه‌مندی ها </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 hover:text-primary"
+            href="./profile-notification.html"
+          >
+            <span class="flex items-center gap-x-2">
+              <svg class="h-6 w-6">
+                <use xlink:href="#notification" />
+              </svg>
+              <span> پیام ها </span>
+            </span>
+
+            <span class="relative flex h-5 w-5">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-btn text-sm text-white"
+              >
+                2
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="flex items-center justify-between rounded-lg px-4 py-3 text-red-500 hover:bg-warning/10 dark:text-red-400 hover:dark:bg-red-400/10"
+            href="#"
+          >
+            <div class="flex items-center gap-x-2">
+              <svg class="h-6 w-6">
+                <use xlink:href="#exit" />
+              </svg>
+              <span> خروج </span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Mobile User Basket Drawer -->
+
+  <div
+    aria-labelledby="user-basket-drawer-navigation-label"
+    class="fixed left-0 top-0 z-40 h-full w-80 -translate-x-full bg-muted transition-transform duration-300"
+    id="user-basket-drawer-navigation"
+    tabindex="-1"
+  >
+    <div class="flex items-center justify-between gap-x-4 border-b p-4 pb-5">
+      <button
+        aria-controls="user-account-drawer-navigation"
+        class="inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-text/90"
+        data-drawer-hide="user-basket-drawer-navigation"
+        type="button"
+      >
+        <svg class="h-5 w-5">
+          <use xlink:href="#close" />
+        </svg>
+
+        <span class="sr-only">Close menu</span>
+      </button>
+      <h5 class="text-lg text-text/90">
+        سبد خرید <span class="text-sm">( 4 )</span>
+      </h5>
+    </div>
+    <div class="h-full pb-[150px]">
+      <ul class="main-scroll h-full space-y-2 divide-y overflow-y-auto p-4">
+        <li>
+          <div class="flex gap-x-2 py-5">
+            <!-- Product Image -->
+
+            <div class="relative min-w-fit">
+              <a href="./product-detail.html">
+                <img
+                  alt=""
+                  class="h-20 w-20"
+                  loading="lazy"
+                  src="./assets/images/products/p1.png"
+                />
+              </a>
+              <button
+                class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                type="button"
+              >
+                <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                  <use xlink:href="#close" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="w-full space-y-1.5">
+              <!-- Product Title -->
+
+              <a class="line-clamp-2 h-10 text-sm" href="./product-detail.html">
+                تیشرت اسپورت مردانه
+              </a>
+              <!-- Product Attribute -->
+              <div class="flex items-center gap-x-2 text-xs text-text/60">
+                <div>تعداد : 2</div>
+                <div class="h-3 w-px rounded-full bg-background"></div>
+                <div class="flex items-center gap-x-2">
+                  <span
+                    class="h-4 w-4 rounded-full"
+                    style="background: rgb(128, 128, 128)"
+                  ></span>
+                  <span> طوسی</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <!-- Product Price -->
+                <div class="text-primary">
+                  <span class="font-bold">1,800,000</span>
+                  <span class="text-xs">تومان</span>
+                </div>
+                <!-- Product Quantity -->
+                <div
+                  class="flex h-8 w-20 justify-between rounded-lg border px-2 py-1"
+                >
+                  <button type="button" data-action="increment">
+                    <svg class="h-5 w-5 text-primary">
+                      <use xlink:href="#plus" />
+                    </svg>
+                  </button>
+                  <input
+                    value="1"
+                    disabled
+                    type="number"
+                    class="flex h-5 w-5 select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                  />
+                  <button type="button" data-action="decrement">
+                    <svg class="h-5 w-5 text-red-600 dark:text-red-500">
+                      <use xlink:href="#minus" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="flex gap-x-2 py-5">
+            <!-- Product Image -->
+
+            <div class="relative min-w-fit">
+              <a href="./product-detail.html">
+                <img
+                  alt=""
+                  class="h-20 w-20"
+                  loading="lazy"
+                  src="./assets/images/products/p2.png"
+                />
+              </a>
+              <button
+                class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                type="button"
+              >
+                <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                  <use xlink:href="#close" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="w-full space-y-1.5">
+              <!-- Product Title -->
+
+              <a class="line-clamp-2 h-10 text-sm" href="./product-detail.html">
+                کلاه اسپورت مردانه
+              </a>
+              <!-- Product Attribute -->
+              <div class="flex items-center gap-x-2 text-xs text-text/60">
+                <div>تعداد : 2</div>
+                <div class="h-3 w-px rounded-full bg-background"></div>
+                <div class="flex items-center gap-x-2">
+                  <span
+                    class="h-4 w-4 rounded-full"
+                    style="background: rgb(128, 128, 128)"
+                  ></span>
+                  <span> طوسی</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <!-- Product Price -->
+                <div class="text-primary">
+                  <span class="font-bold">1,800,000</span>
+                  <span class="text-xs">تومان</span>
+                </div>
+                <!-- Product Quantity -->
+                <div
+                  class="flex h-8 w-20 justify-between rounded-lg border px-2 py-1"
+                >
+                  <button type="button" data-action="increment">
+                    <svg class="h-5 w-5 text-primary">
+                      <use xlink:href="#plus" />
+                    </svg>
+                  </button>
+                  <input
+                    value="1"
+                    disabled
+                    type="number"
+                    class="flex h-5 w-5 select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                  />
+                  <button type="button" data-action="decrement">
+                    <svg class="h-5 w-5 text-red-600 dark:text-red-500">
+                      <use xlink:href="#minus" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="flex gap-x-2 py-5">
+            <!-- Product Image -->
+
+            <div class="relative min-w-fit">
+              <a href="./product-detail.html">
+                <img
+                  alt=""
+                  class="h-20 w-20"
+                  loading="lazy"
+                  src="./assets/images/products/p3.png"
+                />
+              </a>
+              <button
+                class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                type="button"
+              >
+                <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                  <use xlink:href="#close" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="w-full space-y-1.5">
+              <!-- Product Title -->
+
+              <a class="line-clamp-2 h-10 text-sm" href="./product-detail.html">
+                کفش اسپورت مردانه
+              </a>
+              <!-- Product Attribute -->
+              <div class="flex items-center gap-x-2 text-xs text-text/60">
+                <div>تعداد : 2</div>
+                <div class="h-3 w-px rounded-full bg-background"></div>
+                <div class="flex items-center gap-x-2">
+                  <span
+                    class="h-4 w-4 rounded-full"
+                    style="background: rgb(128, 128, 128)"
+                  ></span>
+                  <span> طوسی</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <!-- Product Price -->
+                <div class="text-primary">
+                  <span class="font-bold">1,800,000</span>
+                  <span class="text-xs">تومان</span>
+                </div>
+                <!-- Product Quantity -->
+                <div
+                  class="flex h-8 w-20 justify-between rounded-lg border px-2 py-1"
+                >
+                  <button type="button" data-action="increment">
+                    <svg class="h-5 w-5 text-primary">
+                      <use xlink:href="#plus" />
+                    </svg>
+                  </button>
+                  <input
+                    value="1"
+                    disabled
+                    type="number"
+                    class="flex h-5 w-5 select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                  />
+                  <button type="button" data-action="decrement">
+                    <svg class="h-5 w-5 text-red-600 dark:text-red-500">
+                      <use xlink:href="#minus" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="flex gap-x-2 py-5">
+            <!-- Product Image -->
+
+            <div class="relative min-w-fit">
+              <a href="./product-detail.html">
+                <img
+                  alt=""
+                  class="h-20 w-20"
+                  loading="lazy"
+                  src="./assets/images/products/p4.png"
+                />
+              </a>
+              <button
+                class="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background"
+                type="button"
+              >
+                <svg class="h-6 w-6 text-red-600 dark:text-red-500">
+                  <use xlink:href="#close" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="w-full space-y-1.5">
+              <!-- Product Title -->
+
+              <a class="line-clamp-2 h-10 text-sm" href="./product-detail.html">
+                کفش اسپورت مردانه
+              </a>
+              <!-- Product Attribute -->
+              <div class="flex items-center gap-x-2 text-xs text-text/60">
+                <div>تعداد : 2</div>
+                <div class="h-3 w-px rounded-full bg-background"></div>
+                <div class="flex items-center gap-x-2">
+                  <span
+                    class="h-4 w-4 rounded-full"
+                    style="background: red"
+                  ></span>
+                  <span> قرمز</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <!-- Product Price -->
+                <div class="text-primary">
+                  <span class="font-bold">1,800,000</span>
+                  <span class="text-xs">تومان</span>
+                </div>
+                <!-- Product Quantity -->
+                <div
+                  class="flex h-8 w-20 justify-between rounded-lg border px-2 py-1"
+                >
+                  <button type="button" data-action="increment">
+                    <svg class="h-5 w-5 text-primary">
+                      <use xlink:href="#plus" />
+                    </svg>
+                  </button>
+                  <input
+                    value="1"
+                    disabled
+                    type="number"
+                    class="flex h-5 w-5 select-none items-center justify-center bg-transparent text-center text-sm outline-none"
+                  />
+                  <button type="button" data-action="decrement">
+                    <svg class="h-5 w-5 text-red-600 dark:text-red-500">
+                      <use xlink:href="#minus" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Footer -->
+
+    <div
+      class="sticky bottom-0 left-0 right-0 flex items-center justify-between border-t p-4 px-6 py-4"
+    >
+      <div class="flex flex-col items-center gap-y-1">
+        <div class="text-sm text-text/60">مبلغ قابل پرداخت</div>
+
+        <div class="text-text/90">
+          <span class="font-bold">1,200,000</span>
+          <span class="text-sm">تومان</span>
+        </div>
+      </div>
+      <a class="btn-primary w-32 py-3 text-sm" href="./checkout-cart.html">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+</div>

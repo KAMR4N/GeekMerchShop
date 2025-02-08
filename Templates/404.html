@@ -1,0 +1,16 @@
+{% extends 'Layout/main.html' %}
+{% load static %}
+{% load filters %} 
+{% block content %}
+      <main class="flex-grow bg-background pb-14 pt-36 xs:pt-36">
+        <div class="mt-10 flex flex-col items-center justify-center gap-y-6">
+          <h1 class="text-9xl font-bold text-text/90">404</h1>
+          <h2 class="text-lg text-text/90 lg:text-xl">
+            صفحه‌ای که دنبال آن بودید پیدا نشد!
+          </h2>
+          <a class="btn-primary px-6 py-3" href="/"
+            >بازگشت به صفحه اصلی</a
+          >
+        </div>
+      </main>
+{% endblock %}

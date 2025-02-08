@@ -1,0 +1,21 @@
+{% extends 'Layout/main.html' %} {% load static %} {% load filters %} {% block content %}
+
+<main class="flex-grow bg-background pb-14 pt-36 xs:pt-36">
+  <div class="container rounded-lg bg-muted p-5">
+    <!-- Head -->
+    <div class="mb-5 flex">
+      <h1 class="relative select-none pb-2 text-lg md:text-xl">
+        درباره ما
+        <span
+          class="absolute bottom-0 right-0 h-0.5 w-full rounded-full bg-primary"
+        ></span>
+      </h1>
+    </div>
+    <!-- Content -->
+    <div class="space-y-4">
+      {{ description|safe }}
+    </div>
+  </div>
+</main>
+
+{% endblock %}
