@@ -11,8 +11,15 @@ from django.contrib import messages
 # Create your views here.
 
 
-def products_archive(request):
-    products_list = Product.objects.order_by("-created_at").all()
+def products_archive(request, *args, **kwargs):
+    if kwargs["slug"]:
+        products_list = (
+            Product.objects.filter(categories__slug__icontains=kwargs["slug"])
+            .order_by("-created_at")
+            .all()
+        )
+    else:
+        products_list = Product.objects.order_by("-created_at").all()
     paginator = Paginator(products_list, 9)
 
     page_number = request.GET.get("page")
@@ -71,40 +78,54 @@ def add_user_order(request):
 
     return redirect(f"/shop/product/{product.slug}")
 
-@login_required(login_url='/login', )
+
+@login_required(
+    login_url="/login",
+)
 def user_open_order(request):
-    context = {
-        'order': None,
-        'details': None
-    }
-    open_order: Order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
+    context = {"order": None, "details": None}
+    open_order: Order = Order.objects.filter(
+        owner_id=request.user.id, is_paid=False
+    ).first()
     if open_order is not None:
-        context['order'] = open_order
-        context['details'] = open_order.orderdetail_set.all()
-    return render(request, 'shop/cart.html', context)
+        context["order"] = open_order
+        context["details"] = open_order.orderdetail_set.all()
+    return render(request, "shop/cart.html", context)
 
 
-@login_required(login_url='/login', )
+@login_required(
+    login_url="/login",
+)
 def remove_item_order(request, *args, **kwargs):
-    detail_id = kwargs.get('detail_id')
+    detail_id = kwargs.get("detail_id")
     if detail_id is not None:
-        order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order__owner=request.user.id)
+        order_detail = OrderDetail.objects.get_queryset().get(
+            id=detail_id, order__owner=request.user.id
+        )
         if order_detail is not None:
             order_detail.delete()
         messages.success(request, "محصول از سبد خرید حذف شد")
-        return redirect('/cart')
+        return redirect("/cart")
     raise Http404()
 
-@login_required(login_url='/login', )
+
+@login_required(
+    login_url="/login",
+)
 def remove_all_order(request, *args, **kwargs):
-    open_order: Order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
+    open_order: Order = Order.objects.filter(
+        owner_id=request.user.id, is_paid=False
+    ).first()
     if open_order is not None:
         OrderDetail.objects.filter(order=open_order).delete()
         messages.success(request, "سبد خرید خالی شد")
-        return redirect('/cart')
+        return redirect("/cart")
     raise Http404()
 
-@login_required(login_url='/login', )
+
+@login_required(
+    login_url="/login",
+)
 def payment(request):
     open_order = Order.objects.filter(owner_id=request.user.id, is_paid=False).first()
     open_order.is_paid = True
@@ -113,9 +134,14 @@ def payment(request):
     context = {}
     return render(request, "Shop/payment.html", context)
 
+
 def search_products(request):
-    query = request.GET.get('q', '')
-    products = Product.objects.filter(Q(name__icontains=query)) if query else Product.objects.all()
+    query = request.GET.get("q", "")
+    products = (
+        Product.objects.filter(Q(name__icontains=query))
+        if query
+        else Product.objects.all()
+    )
     paginator = Paginator(products, 9)
 
     page_number = request.GET.get("page")
@@ -124,5 +150,5 @@ def search_products(request):
     page_obj = paginator.get_page(page_number)
     page_obj.adjusted_elided_pages = paginator.get_elided_page_range(page_number)
 
-    context = {"page_obj": page_obj, 'query': query}
-    return render(request, 'Shop/shop.html', context)
+    context = {"page_obj": page_obj, "query": query}
+    return render(request, "Shop/shop.html", context)
